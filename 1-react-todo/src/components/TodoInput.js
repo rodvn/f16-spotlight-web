@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import Radium from 'radium';
 
 import {
   setTodoInputValue,
@@ -8,6 +9,8 @@ import {
 import {
   addTodo,
 } from 'actions/todos';
+
+import styles from 'styles';
 
 const mapStateToProps = state => ({
   value: state.ui.inputValue,
@@ -19,6 +22,7 @@ const mapDispatchToProps = {
 };
 
 @connect(mapStateToProps, mapDispatchToProps)
+@Radium
 export default class TodoInput extends Component {
   static propTypes = {
     value: PropTypes.string,
@@ -43,6 +47,7 @@ export default class TodoInput extends Component {
     } = this.props;
     return (
       <input
+        style={styles.input}
         type="text"
         placeholder="Hit enter to add a todo"
         value={value}

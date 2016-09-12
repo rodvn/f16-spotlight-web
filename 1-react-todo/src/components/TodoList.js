@@ -93,7 +93,7 @@ export default class TodoInput extends Component {
         key={todo.key}
         style={{
           height: '30px',
-          width: '150px',
+          width: '200px',
           lineHeight: '30px',
           borderBottom: '1px solid #000',
           paddingLeft: '10px',

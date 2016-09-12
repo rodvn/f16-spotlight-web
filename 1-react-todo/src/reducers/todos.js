@@ -39,11 +39,22 @@ export const todoSelector = createSelector(
   (route, all) => {
     switch (route) {
       case 'all':
-        return _(all).map(todo => todo).reverse().value();
+        return _(all)
+          .map(todo => todo)
+          .reverse()
+          .value();
       case 'incomplete':
-        return all.filter(todo => !todo.complete);
+        return _(all)
+          .map(todo => todo)
+          .filter(todo => !todo.complete)
+          .reverse()
+          .value();
       case 'complete':
-        return all.filter(todo => todo.complete);
+        return all
+          .map(todo => todo)
+          .filter(todo => todo.complete)
+          .reverse()
+          .value();
       default:
         return [];
     }

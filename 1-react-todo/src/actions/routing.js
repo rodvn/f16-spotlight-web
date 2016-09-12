@@ -15,3 +15,7 @@ export function setupRouter() {
     dispatch(setPathname(location));
   });
 }
+
+export function push(route) {
+  return () => history.push(route);
+}

@@ -21,3 +21,24 @@ export function setLoginFailed(payload) {
     payload,
   };
 }
+
+export function login() {
+  return (dispatch, getState) => {
+    dispatch(setLoggingIn(true));
+    const {
+      username,
+      password,
+    } = getState.user;
+    fetch(URL, {
+      method: 'POST',
+      body: JSON.strinify({
+        username,
+        password,
+      }),
+    })
+    .then(res => res.json())
+    .then((json) => {
+      dispatch(setLoggedIn(false));
+    });
+  }
+}

@@ -28,10 +28,10 @@ export function login() {
     const {
       username,
       password,
-    } = getState.user;
-    fetch(URL, {
+    } = getState().user;
+    fetch('http://localhost:3000/login', {
       method: 'POST',
-      body: JSON.strinify({
+      body: JSON.stringify({
         username,
         password,
       }),

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import FastClick from 'fastclick';
+import 'whatwg-fetch';
 
 import DevTools from 'redux/DevTools';
 import configureStore from 'redux/configureStore';
